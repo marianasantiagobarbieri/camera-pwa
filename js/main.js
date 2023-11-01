@@ -46,7 +46,7 @@ cameraTraseira.onclick = function () {
    constraints = { video: { facingMode: modoCamera }, audio: false};
 
     cameraStart();
-    console.log(constraints);
+    alert(constraints);
 }
 
 window.addEventListener("load", cameraStart, false);
