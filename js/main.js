@@ -29,7 +29,7 @@ function cameraStart() {
         alert("Erro")
     })
     .catch(function (error) {
-        console.error("Ocorreu um erro.", error);
+        alert("Ocorreu um erro.", error);
     });
 }
 
@@ -43,9 +43,9 @@ cameraTrigger.onclick = function () {
 
 
 cameraTraseira.onclick = function () {
-   /* modoCamera = "environment";
-    cameraStart();*/
-    alert("Alerta ")
+   modoCamera = "environment";
+    cameraStart();
+
 }
 
 window.addEventListener("load", cameraStart, false);
