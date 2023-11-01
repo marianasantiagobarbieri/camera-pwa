@@ -44,7 +44,7 @@ cameraTrigger.onclick = function () {
 
 cameraTraseira.onclick = async function () {
     pararStreams(cameraView.srcObject);
-   modoCamera = "environment";
+   modoCamera = (modoCamera == "user") ? "environment": "user";
    constraints = { video: { facingMode:{exact:modoCamera} }, audio: false};
    cameraStart();
 
