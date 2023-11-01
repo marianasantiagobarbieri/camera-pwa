@@ -42,12 +42,12 @@ cameraTrigger.onclick = function () {
 }
 
 
-cameraTraseira.onclick = function () {
+cameraTraseira.onclick = async function () {
    modoCamera = "environment";
    constraints = { video: { facingMode:{exact:modoCamera} }, audio: false};
+   
+    await cameraStart();
 
-    cameraStart();
-    
 }
 
 window.addEventListener("load", cameraStart, false);
