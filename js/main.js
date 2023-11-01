@@ -43,11 +43,17 @@ cameraTrigger.onclick = function () {
 
 
 cameraTraseira.onclick = async function () {
+    pararStreams(cameraView.srcObject);
    modoCamera = "environment";
    constraints = { video: { facingMode:{exact:modoCamera} }, audio: false};
-   
-    await cameraStart();
+   cameraStart();
 
+}
+
+function pararStreams(stream){
+    stream.getTracks().forEach(track => {
+        track.stop();
+    });
 }
 
 window.addEventListener("load", cameraStart, false);
