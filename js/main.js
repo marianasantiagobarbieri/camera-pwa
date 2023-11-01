@@ -26,6 +26,7 @@ function cameraStart() {
     navigator.mediaDevices.getUserMedia(constraints).then(function (stream) {
         let track = stream.getTracks[0];
         cameraView.srcObject = stream;
+        alert("Erro")
     })
     .catch(function (error) {
         console.error("Ocorreu um erro.", error);
