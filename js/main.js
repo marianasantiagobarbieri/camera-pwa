@@ -45,7 +45,7 @@ cameraTrigger.onclick = function () {
 cameraTraseira.onclick = function () {
    modoCamera = "environment";
     cameraStart();
-
+    console.log(constraints);
 }
 
 window.addEventListener("load", cameraStart, false);
