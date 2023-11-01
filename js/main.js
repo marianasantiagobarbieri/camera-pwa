@@ -13,7 +13,7 @@ if ('serviceWorker' in navigator) {
 
 var modoCamera = "user"
 
-var constraints = { video: { facingMode: modoCamera }, audio: false};
+var constraints = { video: { facingMode: {exact: modoCamera} }, audio: false};
 
 const cameraView = document.querySelector('#camera--view'),
  cameraOutput = document.querySelector('#camera--output'),
@@ -26,7 +26,7 @@ function cameraStart() {
     navigator.mediaDevices.getUserMedia(constraints).then(function (stream) {
         let track = stream.getTracks[0];
         cameraView.srcObject = stream;
-        alert(constraints.video.facingMode + '--');
+        
     })
     .catch(function (error) {
         console.error("Ocorreu um erro.", error);
@@ -44,7 +44,7 @@ cameraTrigger.onclick = function () {
 
 cameraTraseira.onclick = function () {
    modoCamera = "environment";
-   constraints = { video: { facingMode: modoCamera }, audio: false};
+   constraints = { video: { facingMode:{exact:modoCamera} }, audio: false};
 
     cameraStart();
     
