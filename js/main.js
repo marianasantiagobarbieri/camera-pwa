@@ -44,7 +44,6 @@ cameraTrigger.onclick = function () {
 
 cameraTraseira.onclick = function () {
     modoCamera = "environment";
-    constraints = { video: { facingMode: modoCamera }, audio: false};
     cameraStart();
 }
 
