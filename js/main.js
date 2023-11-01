@@ -26,10 +26,9 @@ function cameraStart() {
     navigator.mediaDevices.getUserMedia(constraints).then(function (stream) {
         let track = stream.getTracks[0];
         cameraView.srcObject = stream;
-        alert("Erro")
     })
     .catch(function (error) {
-        alert("Ocorreu um erro.", error);
+        console.error("Ocorreu um erro.", error);
     });
 }
 
@@ -44,6 +43,8 @@ cameraTrigger.onclick = function () {
 
 cameraTraseira.onclick = function () {
    modoCamera = "environment";
+   constraints = { video: { facingMode: modoCamera }, audio: false};
+
     cameraStart();
     console.log(constraints);
 }
