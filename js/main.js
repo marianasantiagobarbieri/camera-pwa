@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const video = document.getElementById('video');
     const canvas = document.getElementById('canvas');
     const captureBtn = document.getElementById('captureBtn');
+    const equipamento = document.getElementById('equipamento').value;
+    const laboratorio = document.getElementById('laboratorio').value;
+    const instituto = document.getElementById('instituto').value;
 
     navigator.mediaDevices.getUserMedia({ video: true })
       .then(function (stream) {
@@ -37,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const storeName = 'capturedPhotos';
 
       const request = indexedDB.open(dbName, dbVersion);
+      console.log("fghfhfhc")
 
       request.onerror = function (event) {
         console.error('Erro ao abrir o banco de dados: ', event.target.error);
@@ -52,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const transaction = db.transaction(storeName, 'readwrite');
         const store = transaction.objectStore(storeName);
 
-        const photoData = { imageData: imageData, timestamp: new Date(), };
+        const photoData = { imageData: imageData, timestamp: new Date(), equipamento: equipamento, laboratorio: laboratorio, instituto: instituto};
         const addRequest = store.add(photoData);
 
         addRequest.onsuccess = function () {
@@ -109,6 +113,6 @@ function pararStreams(stream){
     stream.getTracks().forEach(track => {
         track.stop();
     });
-}*/
+}
 
-window.addEventListener("load", cameraStart, false);
+window.addEventListener("load", cameraStart, false);*/
