@@ -11,18 +11,22 @@
     <title>PWA - Camera</title>
   </head>
   <body>
-    
+   
+  <div class="container">  
+   <h1>Formulário</h1>
    <main id="camera">
+    <canvas id="camera--sensor"></canvas>
+     <video id="camera--view" autoplay playsinline></video>
 
-  <canvas id="camera--sensor"></canvas>
+       <img src="//:0" alt="" id="camera--output">
 
-  <video id="camera--view" autoplay playsinline></video>
-
-  <img src="//:0" alt="" id="camera--output">
-
-  <button id="camera--trigger">Tirar Foto</button>
-  <button id="camera--Traseira">Câmera Traseira</button>
+        <button id="camera--trigger">Tirar Foto</button>
+        <button id="camera--Traseira">Câmera Traseira</button>
    </main>
+   <input type="text" placeholder="Equipamento..."/>
+   <input type="text" placeholder="Laboratório..."/>
+   <input type="text" placeholder="Instituto..."/>
+  </div>
 
     <script type="module" src="js/main.js"></script>
   </body>
