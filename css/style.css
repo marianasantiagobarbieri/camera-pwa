@@ -6,29 +6,21 @@ html, body{
 }
 
 #camera{
-    position: fixed;
     height: 20%;
     width: 10%;
-    object-fit: cover;
 }
 
- #camera--view, #camera--sensor, #camera--output{
-    position: fixed;
+ #camera--view{
     height: 20%;
     width: 10%;
-    object-fit: cover;
 }
-#camera--sensor, #camera--output{
-    position: fixed;
+#camera--sensor{
     height: 20%;
     width: 10%;
-    object-fit: cover;
 }
  #camera--output{
-    position: fixed;
     height: 20%;
     width: 10%;
-    object-fit: cover;
 }
 #camera--view, #camera--sensor, #camera--output{
     transform: scaleX(-1);
