@@ -10,7 +10,62 @@ if ('serviceWorker' in navigator) {
         }
     });
 }
+document.addEventListener('DOMContentLoaded', function () {
+    const video = document.getElementById('video');
+    const canvas = document.getElementById('canvas');
+    const captureBtn = document.getElementById('captureBtn');
 
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(function (stream) {
+        video.srcObject = stream;
+      })
+      .catch(function (error) {
+        console.error('Erro ao acessar a câmera: ', error);
+      });
+
+    captureBtn.addEventListener('click', function () {
+      const context = canvas.getContext('2d');
+      context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+      const imageData = canvas.toDataURL('image/png');
+      saveToIndexedDB(imageData);
+    });
+
+    function saveToIndexedDB(imageData) {
+      const dbName = 'capturedPhotosDB';
+      const dbVersion = 1;
+      const storeName = 'capturedPhotos';
+
+      const request = indexedDB.open(dbName, dbVersion);
+
+      request.onerror = function (event) {
+        console.error('Erro ao abrir o banco de dados: ', event.target.error);
+      };
+
+      request.onupgradeneeded = function (event) {
+        const db = event.target.result;
+        const store = db.createObjectStore(storeName, { autoIncrement: true, keyPath: 'id' });
+      };
+
+      request.onsuccess = function (event) {
+        const db = event.target.result;
+        const transaction = db.transaction(storeName, 'readwrite');
+        const store = transaction.objectStore(storeName);
+
+        const photoData = { imageData: imageData, timestamp: new Date(), };
+        const addRequest = store.add(photoData);
+
+        addRequest.onsuccess = function () {
+          console.log('Foto capturada e armazenada no IndexedDB com sucesso!');
+        };
+
+        addRequest.onerror = function (error) {
+          console.error('Erro ao armazenar a foto no IndexedDB: ', error);
+        };
+      };
+    }
+  });
+/*
 var modoCamera = "user"
 
 var constraints = { video: { facingMode: {exact: modoCamera} }, audio: false};
@@ -54,6 +109,6 @@ function pararStreams(stream){
     stream.getTracks().forEach(track => {
         track.stop();
     });
-}
+}*/
 
 window.addEventListener("load", cameraStart, false);

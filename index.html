@@ -14,23 +14,21 @@
    
   <div class="container">  
    <h1>Formulário</h1>
-   <main id="camera">
-    <canvas id="camera--sensor"></canvas>
-     <video id="camera--view" autoplay playsinline></video>
+   <video id="video" width="640" height="480" autoplay></video>
+  <button id="captureBtn">Capturar Foto</button>
+  <canvas id="canvas" width="640" height="480" style="display: none;"></canvas>
 
-       <img src="//:0" alt="" id="camera--output">
-
-        <button id="camera--trigger">Tirar Foto</button>
-        <button id="camera--Traseira">Câmera Traseira</button>
-   </main>
    <label> Equipamento:</label><br/>
-   <input type="text" placeholder="Equipamento..."/><br/><br/>
+   <input type="text" placeholder="Equipamento..." i/><br/><br/>
 
    <label> Laboratório:</label><br/>
    <input type="text" placeholder="Laboratório..."/><br/><br/>
 
    <label> Instituto Residente:</label><br/>
    <input type="text" placeholder="Instituto..."/><br/><br/>
+
+
+   <button>Listar</button>
   </div>
 
     <script type="module" src="js/main.js"></script>
