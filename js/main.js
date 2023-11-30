@@ -95,10 +95,10 @@ document.addEventListener('DOMContentLoaded', function () {
       const store = transaction.objectStore(storeName);
       
       const getAllRequest = store.getAll();
-      
       getAllRequest.onsuccess = function () {
         let todos = buscar(getAllRequest.result);
-        listagem(todos);
+       /* listagem(todos);
+        console.log(todos)*/
       };
 
       getAllRequest.onerror = function (error) {
@@ -108,15 +108,19 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
  function buscar(inputs){
+  
   console.log(inputs)
   if(inputs){
       const divLista = inputs.map(input => {
           return `<div>
-                  <p>Anotação</p>
-                 
+          <p>Anotação</p>
+          <p>${input.equipamento}</p>
+          <p>${input.laboratorio}</p>
+          <p>${input.instituto}</p>
+          <img src="${input.imageData}"/>
                  </div>`;
       });
-      listagem(divLista.join(' '));
+      listagem(divLista.join(''));
   }
 }
 
