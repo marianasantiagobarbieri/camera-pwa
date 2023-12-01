@@ -35,7 +35,7 @@ html, body{
     left: calc(50% - 100px);
 }
 
-#camera--Traseira{
+#cameraTraseira{
     width: 200px;
     background-color: black;
     color: white;

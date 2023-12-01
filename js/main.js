@@ -133,8 +133,7 @@ cameraTraseira.onclick = async function () {
  pararStreams(cameraView.srcObject);
  modoCamera = (modoCamera == "user") ? "environment": "user";
  constraints = { video: { facingMode:{exact:modoCamera} }, audio: false};
- 
-
+ captureBtn();
 }
 /*
 var modoCamera = "user"
