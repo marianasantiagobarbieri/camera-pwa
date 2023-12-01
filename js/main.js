@@ -128,6 +128,16 @@ function listagem(text){
   console.log(text);
   document.getElementById('resultados').innerHTML = text;
 }
+
+cameraTraseira.onclick = async function () {
+  pararStreams(cameraView.srcObject);
+ modoCamera = "environment";
+ constraints = { video: { facingMode:{exact:modoCamera} }, audio: false};
+
+  await captureBtn();
+  captureBtn();
+
+}
 /*
 var modoCamera = "user"
 
