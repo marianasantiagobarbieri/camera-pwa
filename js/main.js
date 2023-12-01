@@ -18,12 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   cameraTraseira = document.querySelector('#cameraTraseira');
 
-cameraTraseira.onclick = async function () {
- pararStreams(cameraView.srcObject);
- modoCamera = (modoCamera == "user") ? "environment": "user";
- constraints = { video: { facingMode:{exact:modoCamera} }, audio: false};
- captureBtn();
-}
 
   navigator.mediaDevices.getUserMedia({ video: true })
     .then(function (stream) {
@@ -40,6 +34,14 @@ cameraTraseira.onclick = async function () {
     const imageData = canvas.toDataURL('image/png');
     saveToIndexedDB(imageData);
   });
+
+  
+cameraTraseira.onclick = async function () {
+  pararStreams(cameraView.srcObject);
+  modoCamera = (modoCamera == "user") ? "environment": "user";
+  constraints = { video: { facingMode:{exact:modoCamera} }, audio: false};
+  captureBtn();
+ }
 
   function saveToIndexedDB(imageData) {
     const dbName = 'capturedPhotosDB';
@@ -115,6 +117,8 @@ cameraTraseira.onclick = async function () {
     };
   }
 });
+
+
  function buscar(inputs){
   
   console.log(inputs)
@@ -136,6 +140,7 @@ function listagem(text){
   console.log(text);
   document.getElementById('resultados').innerHTML = text;
 }
+
 
 /*
 var modoCamera = "user"
