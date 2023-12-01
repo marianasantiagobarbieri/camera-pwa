@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const captureBtn = document.getElementById('captureBtn');    
   document.getElementById('btnCarregar').addEventListener('click', carregarDoBanco);
 
-  cameraTraseira = document.querySelector('#cameraTraseira');
+  cameraTraseira = document.querySelector('cameraTraseira');
 
 
   navigator.mediaDevices.getUserMedia({ video: true })
@@ -35,13 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
     saveToIndexedDB(imageData);
   });
 
-  
-cameraTraseira.onclick = async function () {
-  pararStreams(cameraView.srcObject);
-  modoCamera = (modoCamera == "user") ? "environment": "user";
-  constraints = { video: { facingMode:{exact:modoCamera} }, audio: false};
-  captureBtn();
- }
+
 
   function saveToIndexedDB(imageData) {
     const dbName = 'capturedPhotosDB';
@@ -141,6 +135,13 @@ function listagem(text){
   document.getElementById('resultados').innerHTML = text;
 }
 
+  
+cameraTraseira.onclick = async function () {
+  pararStreams(cameraView.srcObject);
+  modoCamera = (modoCamera == "user") ? "environment": "user";
+  constraints = { video: { facingMode:{exact:modoCamera} }, audio: false};
+  captureBtn();
+ }
 
 /*
 var modoCamera = "user"
