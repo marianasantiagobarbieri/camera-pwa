@@ -131,11 +131,9 @@ function listagem(text){
 
 cameraTraseira.onclick = async function () {
   pararStreams(cameraView.srcObject);
- modoCamera = "environment";
+ modoCamera = (modoCamera == "user") ? "environment": "user";
  constraints = { video: { facingMode:{exact:modoCamera} }, audio: false};
-
-  await captureBtn();
-  captureBtn();
+ captureBtn();
 
 }
 /*
