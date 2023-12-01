@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const canvas = document.getElementById('canvas');
   const captureBtn = document.getElementById('captureBtn');    
   document.getElementById('btnCarregar').addEventListener('click', carregarDoBanco);
-
+  document.getElementById('camera--Traseira').addEventListener('click', cameraTraseira);
 
   navigator.mediaDevices.getUserMedia({ video: true })
     .then(function (stream) {
