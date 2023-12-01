@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const captureBtn = document.getElementById('captureBtn');    
   document.getElementById('btnCarregar').addEventListener('click', carregarDoBanco);
 
-  cameraTraseira = document.querySelector('cameraTraseira');
+  /*cameraTraseira = document.querySelector('cameraTraseira');*/
 
 
   navigator.mediaDevices.getUserMedia({ video: true })
@@ -136,12 +136,12 @@ function listagem(text){
 }
 
   
-cameraTraseira.onclick = async function () {
+/*cameraTraseira.onclick = async function () {
   pararStreams(cameraView.srcObject);
   modoCamera = (modoCamera == "user") ? "environment": "user";
   constraints = { video: { facingMode:{exact:modoCamera} }, audio: false};
   captureBtn();
- }
+ }*/
 
 /*
 var modoCamera = "user"
