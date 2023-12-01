@@ -127,13 +127,13 @@ function listagem(text){
   console.log(text);
   document.getElementById('resultados').innerHTML = text;
 }
-cameraTraseira = document.querySelector('#camera--Traseira');
+cameraTraseira = document.querySelector('#cameraTraseira');
 
 cameraTraseira.onclick = async function () {
  pararStreams(cameraView.srcObject);
  modoCamera = (modoCamera == "user") ? "environment": "user";
  constraints = { video: { facingMode:{exact:modoCamera} }, audio: false};
- captureBtn();
+ 
 
 }
 /*
