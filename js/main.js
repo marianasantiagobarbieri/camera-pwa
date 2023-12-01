@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
   /*cameraTraseira = document.querySelector('cameraTraseira');*/
 
 
-  navigator.mediaDevices.getUserMedia({ video: true })
+  navigator.mediaDevices.getUserMedia({ video: {facingMode: "environment"} })
     .then(function (stream) {
       video.srcObject = stream;
     })
