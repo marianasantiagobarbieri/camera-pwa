@@ -8,13 +8,24 @@ html, body{
 .container{
     text-align: center;
     border: 1px solid black;
-    background-color: #d6c6cd;
     justify-content: center;
     padding: 0px 0px 20px 0px;
-    margin: 20px 10px;
+    margin: 30px;
 }
 #video{
-    width: 100%;
+    width: 80%;
+}
+
+input{
+    padding: 5px 15px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 2px;
+}
+
+label{
+    text-align: left;
 }
 #captureBtn{
     padding: 8px 10px;
