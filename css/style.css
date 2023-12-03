@@ -9,7 +9,6 @@ html, body{
 }
 
 .LoginBox {
-    height: 120vh;
     background: rgb(209, 209, 209);
     text-align: center;
     display: flex;
@@ -30,6 +29,15 @@ html, body{
     align-items: center;
     box-shadow: #0000;
 }
+
+.LoginForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 
 .LoginInput {
     height: 48px;
