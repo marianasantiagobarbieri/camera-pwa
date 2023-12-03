@@ -14,26 +14,31 @@
   <body>
  
     
-  <div class="container">  
-   <h1>Formulário de Patrimônio</h1>
-   
-   <input type="text" placeholder="Equipamento..." id="equipamento"/><br/><br/>
-
-   <input type="text" placeholder="Laboratório..." id="laboratorio"/><br/><br/>
-
-   <input type="text" placeholder="Instituto..." id="instituto"/><br/><br/>
+  <div class="LoginBox">  
+    <div class="LoginContainer">
+   <h1>Aplicação para Patrimônios Públicos</h1>
    
     <video id="video" width="400" height="480" autoplay></video>
+
+    <input type="text" placeholder="Equipamento..." id="equipamento" class="LoginInput"/> <span class="LoginSpam"></span>
+    <input type="text" placeholder="Laboratório..." id="laboratorio" class="LoginInput"/> <span class="LoginSpam"></span>
+    <input type="text" placeholder="Instituto..." id="instituto" class="LoginInput"/> <span class="LoginSpam"></span>
+
+   <div class="botaoEstilizado"> 
     <button id="captureBtn">Capturar Foto</button><br/>
     <canvas id="canvas" width="640" height="480" style="display: none;"></canvas><br/>
-
- <!-- <button id="cameraTraseira">Câmera Traseira</button>-->
-
    <button id="btnCarregar" class='LoginBotao'>Listagem</button>
-   </div>
+  </div>
+  
 
    <div>
     <div id="resultados"></div>
    </div>
+
+  </div>
+</div>
+
+
+
   </body>
 </html>
