@@ -9,6 +9,7 @@ html, body{
 }
 
 .LoginBox {
+    height: 200vh;
     background: rgb(209, 209, 209);
     text-align: center;
     display: flex;
@@ -62,37 +63,37 @@ html, body{
     height: 1px;
     width: 0;
     margin-bottom: 16px;
-    background: linear-gradient(120deg, #e75590, #00c2cb);
+    background: linear-gradient(120deg, #A48680, #6c4d47);
     transition: .3s ease-in-out;
 }
 
 .LoginInput:focus+.LoginSpam::after {
     width: 100%;
 }
+
+.LoginBotaoCadastrar {
+    height: 48px;
+    width: 100%;
+    outline: none;
+    background: linear-gradient(120deg, #A48680, #6c4d47);
+    background-size: 200%;
+    margin-bottom: 32px;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: bold;
+    border: unset;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+
+/*animacao do botao*/
+.LoginBotaoCadastrar:hover {
+    background-position: right;
+}
+
 #video{
     width: 80%;
-}
-
-
-#captureBtn{
-    width: 100%;
-    padding: 8px 10px;
-    background-color: white;
-    color: black;
-    font-size: 12px;
-    border-radius: 2px;
-    border: 1px solid black;
-    letter-spacing: 1px;
-}
-#btnCarregar{
-    width: 100%;
-    padding: 8px 10px;
-    background-color: white;
-    color: black;
-    font-size: 12px;
-    border-radius: 2px;
-    border: 1px solid black;
-    letter-spacing: 1px;
 }
 
 .offline{  

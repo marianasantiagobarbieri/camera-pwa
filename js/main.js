@@ -119,10 +119,10 @@ document.addEventListener('DOMContentLoaded', function () {
   if(inputs){
       const divLista = inputs.map(input => {
           return `<div>
-          <p>Anotação</p>
-          <p>${input.equipamento}</p>
-          <p>${input.laboratorio}</p>
-          <p>${input.instituto}</p>
+          <h3>Patrimônios Cadastrados</h3>
+          <p>Equipamento: <b> ${input.equipamento} </b></p>
+          <p>Laboratório: <b> ${input.laboratorio}</b></p>
+          <p>Instituto: <b>${input.instituto} </b></p>
           <img src="${input.imageData}"/>
                  </div>`;
       });
