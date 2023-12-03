@@ -9,13 +9,10 @@ html, body{
 }
 
 .LoginBox {
-    height: 200vh;
-    background: rgb(209, 209, 209);
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 .LoginContainer {
@@ -145,3 +142,11 @@ html, body{
     color: #000000;
     text-decoration: none;
 }
+/*
+#resultados{
+  background-color: #6c4d47;
+  margin: 30px;
+  border-radius: 2px;
+  border: 1px solid black;
+  width: 90%;
+}*/
