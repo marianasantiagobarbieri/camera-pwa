@@ -123,8 +123,10 @@ document.addEventListener('DOMContentLoaded', function () {
           <p>Equipamento: <b> ${input.equipamento} </b></p>
           <p>Laboratório: <b> ${input.laboratorio}</b></p>
           <p>Instituto: <b>${input.instituto} </b></p>
-          <img src="${input.imageData}"/>
-                 </div>`;
+          <img width="230" height="150" src="${input.imageData}"/>
+              <hr/>
+          </div>
+          <br/>`;
       });
       listagem(divLista.join(''));
   }
