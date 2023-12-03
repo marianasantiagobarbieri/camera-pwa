@@ -9,6 +9,7 @@ html, body{
 }
 
 .LoginBox {
+    background: #dbcdca;
     text-align: center;
     display: flex;
     align-items: center;

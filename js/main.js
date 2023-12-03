@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
           <img width="230" height="150" src="${input.imageData}"/>
               <hr/>
           </div>
-          <br/>`;
+          <br/> <br/>`;
       });
       listagem(divLista.join(''));
   }
